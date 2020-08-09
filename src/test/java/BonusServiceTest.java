@@ -46,5 +46,19 @@ class BonusServiceTest {
 
         assertEquals(expected, actual);
     }
+        @org.junit.jupiter.api.Test
+        void shouldCalculateForAndMorelimit() {
+            BonusService service = new BonusService();
+
+            // подготавливаем данные:
+            long amount = 3000_60;
+            boolean registered = true;
+            long expected = 90;
+
+            // вызываем целевой метод:
+            long actual = service.calculate(amount, registered);
+
+            assertEquals(expected, actual);
+    }
 }
 
